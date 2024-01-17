@@ -3,15 +3,6 @@ describe('template spec', () => {
     cy.visit('./pages/query.html');
   })
 
-  it('get query', () => {
-    cy.get('button');
-    cy.get('.class1');
-    cy.get('#button2');
-    cy.get('#div2 > p');
-    cy.get('textarea[placeholder="Comment 1"]');
-    cy.get('.myClass[customField*="name"]');
-  })
-
   it('contains query', () => {
     cy.contains('ome5');
     cy.contains('Button');
@@ -19,9 +10,20 @@ describe('template spec', () => {
     cy.contains('TEST');
   })
 
+  it('get query', () => {
+    cy.get('button');
+    cy.get('.class1');
+    cy.get('#button2');
+    cy.get('#div2 > p');
+    cy.get('textarea[placeholder="Comment 1"]');
+    cy.get('.myClass\\.test[customField*="name"]');
+    cy.get('.myClass\\.test[customField^="name"]');
+  })
+
   it('chaining query', () => {
     cy.get('#div1').contains('ome5');
     cy.get('#div2').get('.class2');
+    cy.get('#div2 > p.class1');
   })
 
 

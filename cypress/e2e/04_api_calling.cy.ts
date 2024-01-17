@@ -25,7 +25,7 @@ describe('template spec', () => {
       method: 'POST',
       url: 'https://httpbin.org/post',
       headers: { 'Content-Type': 'application/json' },
-      body: exampleReq
+      body: exampleReq,
     }).then((response) => {
       let res = JSON.parse(response.body.data);
       cy.log(res.name);

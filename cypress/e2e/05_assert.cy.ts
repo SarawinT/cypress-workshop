@@ -15,7 +15,7 @@ describe('template spec', () => {
     })
 
     it('assert element', () => {
-        cy.get('button').should('have.length', 5);
+        cy.get('button').should('have.length', 6);
         cy.contains('ome32').should('exist');
         cy.get('textarea[placeholder="Comment 1"]').type('Hello').should('have.value', 'Hello');
     })
